@@ -129,6 +129,51 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "tcaraccia-riv",
+      "name": "Tomas Caraccia",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/64477810?v=4",
+      "profile": "https://github.com/tcaraccia-riv",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "vasilii-kovalev",
+      "name": "Vasilii Kovalev",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/10310491?v=4",
+      "profile": "https://vk.com/vasilii_kovalev",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "FelixGeelhaar",
+      "name": "Felix Geelhaar",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/6020564?v=4",
+      "profile": "https://github.com/FelixGeelhaar",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "apolakipso",
+      "name": "Apola Kipso",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/494674?v=4",
+      "profile": "https://twitter.com/apolakipso",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "dcgoodwin2112",
+      "name": "dcgoodwin2112",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/4554388?v=4",
+      "profile": "https://github.com/dcgoodwin2112",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "skipCi": true
