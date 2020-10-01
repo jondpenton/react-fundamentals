@@ -14,7 +14,13 @@
     // with these React API calls
     // 💰 The example in the markdown file should be a good hint for you.
 
-    const content = React.createElement('div', { className: 'container' })
+    const content = React.createElement(
+      'div',
+      { className: 'container' },
+      'Hello World'
+        .split(' ')
+        .map((text) => React.createElement('span', { key: text }, text)),
+    )
     ReactDOM.render(content, rootElement)
   </script>
 </body>
