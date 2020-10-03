@@ -5,6 +5,20 @@ import React from 'react'
 
 function UsernameForm({ onSubmitUsername }) {
   const usernameRef = React.useRef(null)
+  const [usernameError, setUsernameError] = React.useState(null)
+
+  function handleChange(event) {
+    const {
+      target: { value },
+    } = event
+    const valueContainsUppercaseCharacter = value.toLowerCase() !== value
+
+    if (valueContainsUppercaseCharacter) {
+      setUsernameError('Username must be lower case')
+    } else {
+      setUsernameError(null)
+    }
+  }
 
   function handleSubmit(event) {
     event.preventDefault()
@@ -16,13 +30,23 @@ function UsernameForm({ onSubmitUsername }) {
     onSubmitUsername(username)
   }
 
+  const hasError = !!usernameError
+
   return (
     <form onSubmit={handleSubmit}>
       <div>
         <label htmlFor="username">Username:</label>
-        <input type="text" id="username" ref={usernameRef} />
+        <input
+          type="text"
+          id="username"
+          ref={usernameRef}
+          onChange={handleChange}
+        />
+        {usernameError && <p>Error: {usernameError}</p>}
       </div>
-      <button type="submit">Submit</button>
+      <button type="submit" disabled={hasError}>
+        Submit
+      </button>
     </form>
   )
 }
