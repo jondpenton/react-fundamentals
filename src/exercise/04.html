@@ -7,15 +7,42 @@
   <script src="https://unpkg.com/react-dom@16.13.1/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/@babel/standalone@7.9.3/babel.js"></script>
   <script type="text/babel">
-    function Message(props) {
-      return <div className="message" {...props} />
+    function Message({ subject, greeting }) {
+      return (
+        <div className="message">
+          {greeting}, {subject}
+        </div>
+      )
+    }
+    function validateProp(props, propName, componentName) {
+      const prop = props[propName]
+      const propProvided = !!prop
+
+      if (!propProvided) {
+        return new Error(`${propName} prop is required`)
+      }
+
+      const propIsString = typeof prop === 'string'
+
+      if (!propIsString) {
+        return new Error(`${propName} prop must be a string`)
+      }
+
+      const propHas2Characters = prop.length >= 2
+
+      if (!propHas2Characters) {
+        return new Error(`${propName} prop must be at least 2 characters`)
+      }
+    }
+    Message.propTypes = {
+      subject: validateProp,
+      greeting: validateProp,
     }
 
     const element = (
       <div className="container">
-        {['Hello World', 'Goodbye World'].map((text) => (
-          <Message key={text}>{text}</Message>
-        ))}
+        <Message greeting="Hello" subject="World" />
+        <Message greeting="Goodbye" subject="World" />
       </div>
     )
 
