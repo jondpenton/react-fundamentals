@@ -7,15 +7,15 @@
   <script src="https://unpkg.com/react-dom@16.13.1/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/@babel/standalone@7.9.3/babel.js"></script>
   <script type="text/babel">
-    function message(props) {
-      return <div className="message" key={props.children} {...props} />
+    function Message(props) {
+      return <div className="message" {...props} />
     }
 
     const element = (
       <div className="container">
-        {['Hello World', 'Goodbye World'].map((text) =>
-          message({ children: text }),
-        )}
+        {['Hello World', 'Goodbye World'].map((text) => (
+          <Message key={text}>{text}</Message>
+        ))}
       </div>
     )
 
